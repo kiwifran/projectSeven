@@ -1,0 +1,56 @@
+$primaryColor: rgb(238, 238, 238);
+$secondaryColor: rgb(34, 34, 34);
+$accentColor:#314850;
+
+@mixin flex ($flex-direction, $justify-content, $align-items, $text-align) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    text-align: $text-align;
+}
+
+@mixin color ($color, $background-color){
+    color: $color;
+    background-color: $background-color;
+}
+h2 {
+    width:30%; 
+    padding-bottom: 30px;
+    border-bottom: 1px solid $secondaryColor; 
+}
+a {
+    text-decoration: none;
+}
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+img,
+button {
+    display: block;
+}
+img {
+    width:100%;
+    max-width:100%;
+    display: block;
+}
+ul {
+    padding-left: 0;
+}
+li {
+    list-style-type: none;
+}
+button {
+    border:none;
+    background-color: inherit;
+}
+[type="text"],
+textarea {
+    border:none;
+    padding-top: 20px;
+}
+.wrapper {
+    padding: 0 8%;
+}

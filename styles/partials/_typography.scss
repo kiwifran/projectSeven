@@ -1,0 +1,43 @@
+@mixin displayFont ($size) {
+    font-size: ($size/20) * 1rem;
+    font-size: $size * 1px;
+    font-family: 'Playfair Display', serif;
+}
+
+@mixin bodyFont ($size) {
+    font-size: ($size/20) * 1rem;
+    font-size: $size * 1px;
+    font-family: 'Lato', sans-serif;
+
+}
+
+body {
+    @include bodyFont(20);
+    font-weight: 300;
+}
+h1 {
+    @include bodyFont(65);
+    // font-weight: 300;
+    span.helloWorld {
+        @include displayFont(45);
+        font-style: italic;
+    }
+}
+h2,
+h3 {
+    @include displayFont(35);
+    font-weight: 400;
+}
+.menu {
+    @include displayFont(22);
+}
+.usedTools {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+label,
+input,
+textarea {
+    @include bodyFont(23);
+    font-weight: 300;
+}

@@ -1,0 +1,233 @@
+// heading animation adapted from https://codepen.io/keenanpayne/pen/KmGXVx
+$heading: "Ciao Mondo!";
+@mixin animate-letters($string) { 
+$length: str-length($string);
+    @for $i from 1 through $length {
+    &:nth-of-type(#{$i}) { 
+      animation-delay: $i * .1s;
+    }
+    }
+}
+span.letters { 
+    @include animate-letters($heading); 
+
+    animation: fadeIn .5s 0s forwards;
+    opacity: 0; 
+}
+
+// Animation
+@keyframes fadeIn { 
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.parallax-mirror:nth-of-type(3) {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+
+}
+header {
+    .parallax-window {
+        padding-top: 10%;
+        height: calc(100vh - 60px);
+        // background:  center center/cover url("../assets/headerBackground.jpg");
+
+        text-align: center;
+    }
+    .arrowDown {
+        margin:9px auto 0;
+        height: 30px;
+        font-size: 30px;
+        text-align: center;
+    }
+}
+nav {
+    @include flex (row, flex-end, center, center);
+    margin-top: 35px;
+    .menu {
+        
+        @include flex(row,space-between, center, center);
+        width: 40%;
+        padding: 20px;
+    }
+    .menuItem {
+        width: 20%;
+        a {
+            position: relative;
+            padding-bottom: 5px;
+            color:inherit;
+            &:hover {
+                color:$accentColor;
+            }
+            //underline effect adapted from https://codepen.io/adatg/pen/OaWvap
+            &::before {
+                content:"";
+                background: $accentColor;
+                visibility: hidden;
+                width: 100%;
+                height: 3px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+            }
+            &:hover::before {
+                visibility: visible;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+        }
+    }
+
+}
+.aboutWrapper,
+.skillsWrapper,
+.worksWrapper,
+.contactWrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.aboutWrapper {
+    @include flex (row, space-between, center, center);
+    .aboutText,
+    .aboutPic {
+        width: 50%;
+    }
+    .aboutText {
+        text-align: left;
+        h2 {
+            width: 60%;
+        }
+    }
+}
+.socialMedia {
+    @include flex(row, space-between, center, left);
+    width: 30%;
+    a{
+        width: 30%;
+        font-size: 30px;
+        color:inherit;
+    }
+}
+.aboutPic {
+    position: relative;
+    @include flex(row, flex-end, flex-start, center);
+    .dandelion,
+    .headShot {
+    width: 45%;
+    }
+    
+    // .dandelion {
+    //     position: absolute;
+    //     top: 0;
+    //     right: 5%;
+    // }
+    .headShot {
+        margin-top: 25%;
+        margin-right: -14%;
+        z-index:1;
+    }
+}
+
+
+.skillsWrapper {
+    padding-bottom: 20px;
+    background: $primaryColor;
+}
+.icons {
+    @include flex(row, center, baseline, center);
+    flex-wrap: wrap;
+    .skillIcon {
+        @include flex(column, center, center, center);
+        width: 20%;
+        i {
+            font-size: 60px;
+        }
+    }
+    img, 
+    svg {
+        width:55px;
+    
+    }
+    svg path {
+        fill:black;
+    }
+}
+.project {
+    @include flex(row, space-between, center, left);
+    &:first-of-type  {
+        margin-top: 30px;
+    }
+    .projectImg,
+    .projectInfo {
+        width: 50%;
+    }
+    .projectInfo {
+        // border: 5px solid $secondaryColor;
+        border-radius: 2px;
+        padding: 45px;
+        background:$primaryColor;
+    }
+    .usedTools {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    a {
+        margin-right: 40px;
+    }
+}
+.recipe {
+    cursor: url()
+}
+.priceGame {
+    
+    & .projectInfo  {
+        order:-3;
+    }
+}
+.melody {
+
+}
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.contactWrapper {
+    @include color(white, $secondaryColor);
+    margin-top: -40px;
+    h2 {
+        border-bottom: 1px solid $primaryColor;
+    }
+    label,
+    input,
+    textarea {
+        display: block;
+        width: 70%;
+        margin: 10px auto;
+    }
+    input,
+    textarea {
+        padding: 10px;
+        border-bottom: 1px solid $primaryColor;
+        @include color(white, inherit);
+        &:focus {
+            background-color: black;
+        }
+    }
+    textarea {
+        resize: vertical;
+    }
+}
+
+footer {
+    padding: 15px;
+    
+    text-align: center;
+    p {
+        margin: 0;
+    }
+}
