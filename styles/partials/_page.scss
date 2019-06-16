@@ -37,8 +37,7 @@ header {
     .arrowDown {
         margin:9px auto 0;
         height: 30px;
-        font-size: 30px;
-        text-align: center;
+        color: $secondaryColor;
     }
 }
 nav {
@@ -51,7 +50,7 @@ nav {
         padding: 20px;
     }
     .menuItem {
-        width: 20%;
+        // width: 25%;
         a {
             position: relative;
             padding-bottom: 5px;
@@ -103,15 +102,7 @@ nav {
         }
     }
 }
-.socialMedia {
-    @include flex(row, space-between, center, left);
-    width: 30%;
-    a{
-        width: 30%;
-        font-size: 30px;
-        color:inherit;
-    }
-}
+
 .aboutPic {
     position: relative;
     @include flex(row, flex-end, flex-start, center);
@@ -132,10 +123,27 @@ nav {
     }
 }
 
+.socialMedia {
+    @include flex(row, space-between, center, left);
+    width: 30%;
+    a{
+        width: 30%;
+        font-size: 30px;
+        color:inherit;
+        &:hover,
+        &:focus {
+            -webkit-animation: jello-vertical 0.9s both;
+	        animation: jello-vertical 0.9s both;
+        }
+    }
 
+}
 .skillsWrapper {
     padding-bottom: 20px;
     background: $primaryColor;
+    p {
+        font-weight: 400;
+    }
 }
 .icons {
     @include flex(row, center, baseline, center);
@@ -175,20 +183,41 @@ nav {
         text-transform: uppercase;
         font-weight: 400;
     }
+    p{
+        margin-bottom: 35px;
+    }
     a {
         margin-right: 40px;
+        padding: 5px 8px;
+        border: 2px solid $accentColor;
+        border-radius: 2px;
+        color:inherit;
+        transition: all linear 0.4s;
+        //hover effects from https://codepen.io/neerav-deewan/pen/BPXWeL
+        &:focus,
+        &:hover {
+            box-shadow: inset 0 -60px 0 0 $accentColor;
+            color: white;
+        }
     }
 }
-.recipe {
-    cursor: url()
+.recipe,
+.recipe a {
+    //Food icon by Arif Arif from the Noun Project
+    cursor: url(../assets/recipeCursor.png) 9 9, default;
 }
-.priceGame {
-    
-    & .projectInfo  {
-        order:-3;
-    }
+.priceGame,
+.priceGame a {
+    //pricetag icon by iconfield from the Noun Project
+    cursor: url(../assets/priceCursor.png) 5 5, default;
 }
-.melody {
+.priceGame .projectInfo  {
+    order:-3;
+}
+.melody,
+.melody a {
+    //Music icon by Naomi Atkinson from the Noun Project
+    cursor: url(../assets/melodyCursor.png) 5 14, default;
 
 }
 .parallax-window {
@@ -222,7 +251,14 @@ nav {
         resize: vertical;
     }
 }
-
+    .arrowUp {
+        position: fixed;
+        display: none;
+        right: 20px;
+        bottom: 30px;
+        color: $activeColor;
+        opacity: 0.85;
+    }
 footer {
     padding: 15px;
     

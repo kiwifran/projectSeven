@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- clouds icon by Diky Setiawan from the Noun Project -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <title>Frankie Wang</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Playfair+Display:400,700i&display=swap"
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Playfair+Display:400&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/6c35015843.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
@@ -20,8 +22,8 @@
             <h1> <span class="helloWorld">Ciao Mondo!</span> <br> <span class="myName">I'm Frankie Wang</span></h1>
         </div>
             
-        <button class="arrowDown">
-            <i aria-label="goDown" class="fas fa-long-arrow-alt-down"></i>
+        <button aria-label="go to the menu" class="arrowDown">
+            <i aira-hidden="true" class="fas fa-angle-double-down"></i>        
         </button>
 
     </header>
@@ -135,12 +137,12 @@
                     data-aos-duration="800"><img src="./assets/easyRecipe.png" alt=""></div>
                     <div class="projectInfo">
                         <h3>Easy Recipe</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, eos beatae, repellendus cum similique ab
-                            aspernatur consectetur obcaecati dolorum architecto, eveniet nulla nihil a doloremque vel rem unde
-                            recusandae sapiente!</p>
                         <p class="usedTools">
                             html&css | sass | jquery | javascript | responsive
                         </p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, eos beatae, repellendus cum similique ab
+                            aspernatur consectetur obcaecati dolorum architecto, eveniet nulla nihil a doloremque vel rem unde
+                            recusandae sapiente!</p>
                         <a target="_blank" href="https://kiwifran.github.io/frankie-wang-project-three/">Live</a>
                         <a target="_blank" href="https://github.com/kiwifran/frankie-wang-project-three">Github</a>
                     </div>
@@ -174,12 +176,13 @@
                     </div>
                     <div class="projectInfo">
                         <h3>Melodies And Words</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, eos beatae, repellendus cum similique ab
-                            aspernatur consectetur obcaecati dolorum architecto, eveniet nulla nihil a doloremque vel rem unde
-                            recusandae sapiente!</p>
                         <p class="usedTools">
                             react | sass | api | responsive
                         </p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, eos beatae, repellendus cum similique ab
+                            aspernatur consectetur obcaecati dolorum architecto, eveniet nulla nihil a doloremque vel rem unde
+                            recusandae sapiente!</p>
+                        
                         <a target="_blank" href="https://kiwifran.github.io/TracksAndLyrics/">Live</a>
                         <a target="_blank" href="https://github.com/kiwifran/TracksAndLyrics">Github</a>
                     </div>
@@ -196,14 +199,17 @@
             <h2>Let's Chat</h3>
             <form method="POST" action="http://www.focuspocus.io/magic/0f48d8e57c0576c48bf609b6c7e15372">
                 <label for="name">Name</label>
-                <input type="text" id="name"  name="name" placeholder="Your name">
+                <input type="text" id="name"  name="name" placeholder="Your name" required>
                 <label for="email">Email</label>
-                <input type="text" id="email" v name="email" placeholder="Your email address">
+                <input type="email" id="email" v name="email" placeholder="Your email address" required>
                 <label for="comment">Message</label>
-                <textarea name="comment" placeholder="Hello friend!" name="comment" id="comment" cols="30" rows="10"></textarea>
+                <textarea name="comment" placeholder="Hello friend!" name="comment" id="comment" cols="30" rows="5" required></textarea>
                 <input type="submit" value="Send">
             </form>
         </div>
+        <button aria-label="go up to the menu" class="arrowUp">
+            <i aria-hidden="true" class="fas fa-angle-double-up"></i>
+        </button>
     </main>
     <footer>
         <p>&copy;Frankie Wang 2019</p>
@@ -225,11 +231,33 @@
                     }, 1000);
                 })
         }
+        $upButton = $('.arrowUp');
+        const upButtonShow =()=>{
+                $(window).scroll( ()=> {
+                    if ($(window).scrollTop()>900) {
+                        $upButton.css({
+                            "display":"block"
+                        })
+                    }else {
+                        $upButton.css({
+                            "display":"none"
+                        })
+                    }
+            })
+        }
+        const scrollUp =()=>{
+            $('.arrowUp').on('click', function (event) {
+                $('html, body').animate({
+                    scrollTop: $('main').offset().top
+                }, 1200);
+            })
+        }
         $(function() {
             letterByLetter();
             scrollDown();
             AOS.init();
-
+            upButtonShow();
+            scrollUp();
         })
         
     </script>

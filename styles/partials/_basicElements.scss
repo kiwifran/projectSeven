@@ -1,8 +1,8 @@
 $primaryColor: rgb(238, 238, 238);
 $secondaryColor: rgb(34, 34, 34);
-$accentColor:#314850;
-
-@mixin flex ($flex-direction, $justify-content, $align-items, $text-align) {
+$accentColor:rgb(49, 72, 80);
+$activeColor:rgb(100, 159, 201);
+;@mixin flex ($flex-direction, $justify-content, $align-items, $text-align) {
     display: flex;
     flex-direction: $flex-direction;
     justify-content: $justify-content;
@@ -45,11 +45,15 @@ li {
 button {
     border:none;
     background-color: inherit;
+    font-size: 40px;
+    text-align: center;
 }
 [type="text"],
+[type="email"],
 textarea {
     border:none;
     padding-top: 20px;
+
 }
 .wrapper {
     padding: 0 8%;
