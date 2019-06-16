@@ -56,5 +56,18 @@ textarea {
 
 }
 .wrapper {
+    max-width: 1600px;
+    margin-left:auto;
+    margin-right: auto;
     padding: 0 8%;
+}
+@media (max-width:1000px) {
+    button {
+        font-size:30px;
+    }
+}
+@media (max-width:900px) {
+    h2 {
+        width: 70%;
+    }
 }

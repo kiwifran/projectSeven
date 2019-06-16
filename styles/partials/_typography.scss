@@ -16,20 +16,25 @@ body {
     font-weight: 300;
 }
 h1 {
-    @include bodyFont(65);
+    @include bodyFont(88);
     // font-weight: 300;
     span.helloWorld {
-        @include displayFont(45);
+        @include displayFont(59);
         font-style: italic;
     }
 }
-h2,
+h2, 
 h3 {
-    @include displayFont(35);
     font-weight: 400;
 }
+h2 {
+    @include displayFont(40);
+}
+h3 {
+    @include displayFont(35);
+}
 .menu {
-    @include displayFont(22);
+    @include displayFont(30);
 }
 .usedTools {
     font-weight: 400;
@@ -43,4 +48,57 @@ textarea {
 }
 .project a {
     font-weight: 700;
+}
+
+@media (max-width:1480px) {
+    h1 {
+        font-size:65px;
+        span.helloWorld {
+            font-size: 45px;
+        }
+    }
+}
+@media (max-width:1300px) {
+    .menu {
+        font-size: 25px;
+    }
+}
+@media (max-width:1150px) {
+    h1 {
+        font-size: 50px;
+        span.helloWorld {
+            font-size: 38px;
+        }
+    }
+}
+@media (max-width:600px) {
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 25px    
+    }
+    .project .usedTools {
+    font-size: 18px
+    }
+    label,
+    input,
+    textarea {
+        font-size: 20px;
+    }
+
+}
+@media (max-width:500px) {
+    h1 {
+        font-size: 38px;
+        span.helloWorld {
+            font-size: 25px;
+        }
+    }
+    .menu {
+        font-size: 20px;
+    }
+    .project  p {
+        font-size: 18px;
+    }
 }

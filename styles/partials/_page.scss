@@ -14,13 +14,10 @@ span.letters {
     animation: fadeIn .5s 0s forwards;
     opacity: 0; 
 }
-
-// Animation
-@keyframes fadeIn { 
-    from { opacity: 0; }
-    to { opacity: 1; }
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
 }
-
 .parallax-mirror:nth-of-type(3) {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
@@ -47,7 +44,7 @@ nav {
         
         @include flex(row,space-between, center, center);
         width: 40%;
-        padding: 20px;
+        padding-top: 30px;
     }
     .menuItem {
         // width: 25%;
@@ -87,7 +84,7 @@ nav {
 .worksWrapper,
 .contactWrapper {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 68px;
 }
 .aboutWrapper {
     @include flex (row, space-between, center, center);
@@ -125,10 +122,10 @@ nav {
 
 .socialMedia {
     @include flex(row, space-between, center, left);
-    width: 30%;
+    width: 39%;
     a{
         width: 30%;
-        font-size: 30px;
+        font-size: 35px;
         color:inherit;
         &:hover,
         &:focus {
@@ -166,6 +163,7 @@ nav {
 }
 .project {
     @include flex(row, space-between, center, left);
+    margin-top: 50px;
     &:first-of-type  {
         margin-top: 30px;
     }
@@ -220,14 +218,9 @@ nav {
     cursor: url(../assets/melodyCursor.png) 5 14, default;
 
 }
-.parallax-window {
-    min-height: 400px;
-    background: transparent;
-}
 
 .contactWrapper {
     @include color(white, $secondaryColor);
-    margin-top: -40px;
     h2 {
         border-bottom: 1px solid $primaryColor;
     }
@@ -265,5 +258,111 @@ footer {
     text-align: center;
     p {
         margin: 0;
+    }
+}
+@media (max-width:1150px) {
+    nav .menu {
+        width:55%;
+    }
+    .socialMedia {
+        width: 55%;
+    }
+}
+@media (max-width:1000px) {
+    .dandelion {
+        display: none;
+    }
+    .aboutPic .headShot {
+        width: 90%;
+        margin-top: auto;
+        margin-right: 0;
+    }
+
+}
+@media (max-width:900px) {
+    .project {
+        flex-wrap: wrap;
+        .projectImg,
+        .projectInfo {
+            width: 100%;
+        }
+        .projectImg {
+            margin-bottom: 30px;
+        }
+    }
+    .priceGame .projectInfo  {
+    order:2;
+    }
+}
+@media (max-width:750px) {
+    nav .menu {
+        width:100%;
+    }
+    .aboutWrapper {
+        flex-wrap: wrap;
+        .aboutText{
+            width: 100%;
+        }
+        .aboutPic {
+            width: 70%;
+            margin: 20px auto 35px;
+            border-radius: 2px;
+            order:-2;
+        }
+    }
+    .aboutPic .headShot {
+        width: 100%;
+    }
+    
+    .socialMedia {
+        width: 60%
+    }
+    .icons {
+        .skillIcon {
+                width: 33%;
+                margin-top: 20px;
+                i {
+                    font-size: 50px;
+                }
+            }
+        img, 
+        svg {
+            width:46px;
+        
+        }
+    }
+    .contactWrapper {
+        label,
+        input,
+        textarea {
+            width: 100%;
+        }
+    }
+    
+}
+@media (max-width:550px) {
+    .icons {
+        .skillIcon {
+                width:50%;
+                margin-top: 10px;
+                i {
+                    font-size: 40px;
+                }
+            }
+        img, 
+        svg {
+            width:36px;
+        
+        }
+    }
+    .project .projectInfo {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media (max-width:400px) {
+    .project a {
+        display: inline-block;
+        margin-bottom: 20px;
     }
 }
