@@ -15,7 +15,7 @@ span.letters {
     opacity: 0; 
 }
 .parallax-window {
-    min-height: 400px;
+    min-height: 420px;
     background: transparent;
 }
 .parallax-mirror:nth-of-type(3) {
@@ -37,14 +37,32 @@ header {
         color: $secondaryColor;
     }
 }
+main {
+    margin-top: 15px;
+}
+nav.wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 nav {
     @include flex (row, flex-end, center, center);
-    margin-top: 35px;
+    top:0;
+    position: sticky;
+    z-index: 5;
+    &.scrolled {
+        background-color: $primaryColor !important;
+        opacity: 0.85;
+        padding-top: 11px;
+        padding-bottom: 14px;
+        box-shadow:0 0.1px 2px 0.2px $secondaryColor;
+        transition: all 0.5s;
+    }
     .menu {
-        
         @include flex(row,space-between, center, center);
         width: 40%;
-        padding-top: 30px;
+        // margin-top: 0;
+        margin:0;
+        // padding-top: 20px;
     }
     .menuItem {
         // width: 25%;
@@ -62,6 +80,7 @@ nav {
                 visibility: hidden;
                 width: 100%;
                 height: 3px;
+                border-radius: 1px;
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -83,7 +102,7 @@ nav {
 .skillsWrapper,
 .worksWrapper,
 .contactWrapper {
-    padding-top: 50px;
+    padding-top: 60px;
     padding-bottom: 68px;
 }
 .aboutWrapper {
@@ -185,11 +204,16 @@ nav {
         margin-bottom: 35px;
     }
     a {
+        color:inherit;
+    }
+    .buddies:hover{
+        border-bottom: 1px solid $secondaryColor;
+    }
+    .codeLink {
         margin-right: 40px;
         padding: 5px 8px;
         border: 2px solid $accentColor;
         border-radius: 2px;
-        color:inherit;
         transition: all linear 0.4s;
         //hover effects from https://codepen.io/neerav-deewan/pen/BPXWeL
         &:focus,
@@ -209,14 +233,17 @@ nav {
     //pricetag icon by iconfield from the Noun Project
     cursor: url(../assets/priceCursor.png) 5 5, default;
 }
-.priceGame .projectInfo  {
-    order:-3;
-}
+
 .melody,
 .melody a {
     //Music icon by Naomi Atkinson from the Noun Project
     cursor: url(../assets/melodyCursor.png) 5 14, default;
 
+}
+.collegeNav,
+.collegeNav a {
+    //Book icon by sitti fara from the Noun Project
+    cursor:url(../assets/collegeNavCursor.png) 5 5, default;
 }
 
 .contactWrapper {
@@ -264,6 +291,14 @@ footer {
     nav .menu {
         width:55%;
     }
+    nav.wrapper {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+    nav.scrolled {
+        padding-top: 9px;
+        padding-bottom: 12px;
+    }
     .socialMedia {
         width: 55%;
     }
@@ -290,8 +325,9 @@ footer {
             margin-bottom: 30px;
         }
     }
-    .priceGame .projectInfo  {
-    order:2;
+    .priceGame .projectImg,
+    .collegeNav .projectImg  {
+    order:-2;
     }
 }
 @media (max-width:750px) {
@@ -358,6 +394,16 @@ footer {
     .project .projectInfo {
         padding-left: 15px;
         padding-right: 15px;
+    }
+}
+@media (max-width:500px) {
+    nav.wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    }
+    nav.scrolled {
+    padding-top: 7px;
+    padding-bottom: 10px;
     }
 }
 @media (max-width:400px) {

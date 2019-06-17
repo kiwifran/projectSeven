@@ -46,7 +46,7 @@ textarea {
     @include bodyFont(23);
     font-weight: 300;
 }
-.project a {
+.project .codeLink {
     font-weight: 700;
 }
 
@@ -96,7 +96,7 @@ textarea {
         }
     }
     .menu {
-        font-size: 20px;
+        font-size: 18px;
     }
     .project  p {
         font-size: 18px;

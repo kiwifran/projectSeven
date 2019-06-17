@@ -192,7 +192,7 @@ textarea {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
-.project a {
+.project .codeLink {
   font-weight: 700; }
 
 @media (max-width: 1480px) {
@@ -229,7 +229,7 @@ textarea {
     h1 span.helloWorld {
       font-size: 25px; }
   .menu {
-    font-size: 20px; }
+    font-size: 18px; }
   .project p {
     font-size: 18px; } }
 
@@ -286,6 +286,10 @@ textarea {
 @media (max-width: 900px) {
   h2 {
     width: 70%; } }
+
+@media (max-width: 500px) {
+  .wrapper {
+    padding: 0 4%; } }
 
 @-webkit-keyframes fadeIn {
   from {
@@ -393,7 +397,7 @@ span.letters {
     animation-delay: 1.1s; }
 
 .parallax-window {
-  min-height: 400px;
+  min-height: 420px;
   background: transparent; }
 
 .parallax-mirror:nth-of-type(3) {
@@ -410,6 +414,13 @@ header .arrowDown {
   height: 30px;
   color: #222222; }
 
+main {
+  margin-top: 15px; }
+
+nav.wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,7 +436,20 @@ nav {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  margin-top: 35px; }
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5; }
+  nav.scrolled {
+    background-color: #eeeeee !important;
+    opacity: 0.85;
+    padding-top: 11px;
+    padding-bottom: 14px;
+    -webkit-box-shadow: 0 0.1px 2px 0.2px #222222;
+    box-shadow: 0 0.1px 2px 0.2px #222222;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
   nav .menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -442,7 +466,7 @@ nav {
     align-items: center;
     text-align: center;
     width: 40%;
-    padding-top: 30px; }
+    margin: 0; }
   nav .menuItem a {
     position: relative;
     padding-bottom: 5px;
@@ -455,6 +479,7 @@ nav {
       visibility: hidden;
       width: 100%;
       height: 3px;
+      border-radius: 1px;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -474,7 +499,7 @@ nav {
 .skillsWrapper,
 .worksWrapper,
 .contactWrapper {
-  padding-top: 50px;
+  padding-top: 60px;
   padding-bottom: 68px; }
 
 .aboutWrapper {
@@ -626,15 +651,18 @@ nav {
   .project p {
     margin-bottom: 35px; }
   .project a {
+    color: inherit; }
+  .project .buddies:hover {
+    border-bottom: 1px solid #222222; }
+  .project .codeLink {
     margin-right: 40px;
     padding: 5px 8px;
     border: 2px solid #314850;
     border-radius: 2px;
-    color: inherit;
     -webkit-transition: all linear 0.4s;
     -o-transition: all linear 0.4s;
     transition: all linear 0.4s; }
-    .project a:focus, .project a:hover {
+    .project .codeLink:focus, .project .codeLink:hover {
       -webkit-box-shadow: inset 0 -60px 0 0 #314850;
       box-shadow: inset 0 -60px 0 0 #314850;
       color: white; }
@@ -647,14 +675,13 @@ nav {
 .priceGame a {
   cursor: url(../assets/priceCursor.png) 5 5, default; }
 
-.priceGame .projectInfo {
-  -webkit-box-ordinal-group: -2;
-  -ms-flex-order: -3;
-  order: -3; }
-
 .melody,
 .melody a {
   cursor: url(../assets/melodyCursor.png) 5 14, default; }
+
+.collegeNav,
+.collegeNav a {
+  cursor: url(../assets/collegeNavCursor.png) 5 5, default; }
 
 .contactWrapper {
   color: white;
@@ -696,6 +723,12 @@ footer {
 @media (max-width: 1150px) {
   nav .menu {
     width: 55%; }
+  nav.wrapper {
+    padding-top: 17px;
+    padding-bottom: 17px; }
+  nav.scrolled {
+    padding-top: 9px;
+    padding-bottom: 12px; }
   .socialMedia {
     width: 55%; } }
 
@@ -716,10 +749,11 @@ footer {
       width: 100%; }
     .project .projectImg {
       margin-bottom: 30px; }
-  .priceGame .projectInfo {
-    -webkit-box-ordinal-group: 3;
-    -ms-flex-order: 2;
-    order: 2; } }
+  .priceGame .projectImg,
+  .collegeNav .projectImg {
+    -webkit-box-ordinal-group: -1;
+    -ms-flex-order: -2;
+    order: -2; } }
 
 @media (max-width: 750px) {
   nav .menu {
@@ -765,6 +799,14 @@ footer {
   .project .projectInfo {
     padding-left: 15px;
     padding-right: 15px; } }
+
+@media (max-width: 500px) {
+  nav.wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px; }
+  nav.scrolled {
+    padding-top: 7px;
+    padding-bottom: 10px; } }
 
 @media (max-width: 400px) {
   .project a {
