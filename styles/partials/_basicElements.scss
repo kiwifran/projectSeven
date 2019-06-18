@@ -2,14 +2,13 @@ $primaryColor: rgb(238, 238, 238);
 $secondaryColor: rgb(34, 34, 34);
 $accentColor:rgb(49, 72, 80);
 $activeColor:rgb(100, 159, 201);
-;@mixin flex ($flex-direction, $justify-content, $align-items, $text-align) {
+@mixin flex ($flex-direction, $justify-content, $align-items, $text-align) {
     display: flex;
     flex-direction: $flex-direction;
     justify-content: $justify-content;
     align-items: $align-items;
     text-align: $text-align;
 }
-
 @mixin color ($color, $background-color){
     color: $color;
     background-color: $background-color;
@@ -21,6 +20,7 @@ h2 {
 }
 a {
     text-decoration: none;
+    color:inherit;
 }
 h1,
 h2,
@@ -34,7 +34,6 @@ button {
 img {
     width:100%;
     max-width:100%;
-    display: block;
 }
 ul {
     padding-left: 0;
@@ -42,8 +41,13 @@ ul {
 li {
     list-style-type: none;
 }
-button {
+button,
+[type="text"],
+[type="email"],
+textarea  {
     border:none;
+}
+button {
     background-color: inherit;
     font-size: 40px;
     text-align: center;
@@ -51,9 +55,7 @@ button {
 [type="text"],
 [type="email"],
 textarea {
-    border:none;
     padding-top: 20px;
-
 }
 .wrapper {
     max-width: 1600px;
@@ -61,6 +63,7 @@ textarea {
     margin-right: auto;
     padding: 0 8%;
 }
+//media queries
 @media (max-width:1000px) {
     button {
         font-size:30px;
@@ -69,5 +72,10 @@ textarea {
 @media (max-width:900px) {
     h2 {
         width: 70%;
+    }
+}
+@media (max-width:500px) {
+    .wrapper {
+        padding:0 4%;
     }
 }

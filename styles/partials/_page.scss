@@ -3,55 +3,67 @@ $heading: "Ciao Mondo!";
 @mixin animate-letters($string) { 
 $length: str-length($string);
     @for $i from 1 through $length {
-    &:nth-of-type(#{$i}) { 
-      animation-delay: $i * .1s;
-    }
+        &:nth-of-type(#{$i}) { 
+        animation-delay: $i * .1s;
+        }
     }
 }
 span.letters { 
     @include animate-letters($heading); 
-
     animation: fadeIn .5s 0s forwards;
     opacity: 0; 
 }
+//for parallax.js
 .parallax-window {
-    min-height: 400px;
+    min-height: 420px;
     background: transparent;
 }
 .parallax-mirror:nth-of-type(3) {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-
 }
+//header
 header {
     .parallax-window {
         padding-top: 10%;
         height: calc(100vh - 60px);
-        // background:  center center/cover url("../assets/headerBackground.jpg");
-
         text-align: center;
     }
     .arrowDown {
         margin:9px auto 0;
-        height: 30px;
         color: $secondaryColor;
     }
 }
+//main part
+main {
+    margin-top: 15px;
+}
+nav.wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 nav {
     @include flex (row, flex-end, center, center);
-    margin-top: 35px;
+    top:0;
+    position: sticky;
+    z-index: 5;
+    &.scrolled {
+        background-color: $primaryColor !important;
+        opacity: 0.85;
+        padding-top: 11px;
+        padding-bottom: 14px;
+        box-shadow:0 0.1px 2px 0.2px $secondaryColor;
+        transition: all 0.5s;
+    }
     .menu {
-        
         @include flex(row,space-between, center, center);
         width: 40%;
-        padding-top: 30px;
+        margin:0;
     }
     .menuItem {
-        // width: 25%;
         a {
             position: relative;
             padding-bottom: 5px;
-            color:inherit;
             &:hover {
                 color:$accentColor;
             }
@@ -62,6 +74,7 @@ nav {
                 visibility: hidden;
                 width: 100%;
                 height: 3px;
+                border-radius: 1px;
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -77,20 +90,19 @@ nav {
             }
         }
     }
-
 }
 .aboutWrapper,
 .skillsWrapper,
 .worksWrapper,
 .contactWrapper {
-    padding-top: 50px;
+    padding-top: 60px;
     padding-bottom: 68px;
 }
 .aboutWrapper {
     @include flex (row, space-between, center, center);
     .aboutText,
     .aboutPic {
-        width: 50%;
+        width: 49%;
     }
     .aboutText {
         text-align: left;
@@ -105,28 +117,20 @@ nav {
     @include flex(row, flex-end, flex-start, center);
     .dandelion,
     .headShot {
-    width: 45%;
+        width: 45%;
     }
-    
-    // .dandelion {
-    //     position: absolute;
-    //     top: 0;
-    //     right: 5%;
-    // }
     .headShot {
         margin-top: 25%;
         margin-right: -14%;
         z-index:1;
     }
 }
-
 .socialMedia {
     @include flex(row, space-between, center, left);
     width: 39%;
     a{
         width: 30%;
         font-size: 35px;
-        color:inherit;
         &:hover,
         &:focus {
             -webkit-animation: jello-vertical 0.9s both;
@@ -162,7 +166,7 @@ nav {
     }
 }
 .project {
-    @include flex(row, space-between, center, left);
+    @include flex(row, center, center, left);
     margin-top: 50px;
     &:first-of-type  {
         margin-top: 30px;
@@ -172,7 +176,6 @@ nav {
         width: 50%;
     }
     .projectInfo {
-        // border: 5px solid $secondaryColor;
         border-radius: 2px;
         padding: 45px;
         background:$primaryColor;
@@ -184,12 +187,14 @@ nav {
     p{
         margin-bottom: 35px;
     }
-    a {
+    .buddies:hover{
+        border-bottom: 1px solid $secondaryColor;
+    }
+    .codeLink {
         margin-right: 40px;
         padding: 5px 8px;
         border: 2px solid $accentColor;
         border-radius: 2px;
-        color:inherit;
         transition: all linear 0.4s;
         //hover effects from https://codepen.io/neerav-deewan/pen/BPXWeL
         &:focus,
@@ -209,16 +214,17 @@ nav {
     //pricetag icon by iconfield from the Noun Project
     cursor: url(../assets/priceCursor.png) 5 5, default;
 }
-.priceGame .projectInfo  {
-    order:-3;
-}
 .melody,
 .melody a {
     //Music icon by Naomi Atkinson from the Noun Project
     cursor: url(../assets/melodyCursor.png) 5 14, default;
 
 }
-
+.collegeNav,
+.collegeNav a {
+    //Book icon by sitti fara from the Noun Project
+    cursor:url(../assets/collegeNavCursor.png) 5 5, default;
+}
 .contactWrapper {
     @include color(white, $secondaryColor);
     h2 {
@@ -244,25 +250,35 @@ nav {
         resize: vertical;
     }
 }
-    .arrowUp {
-        position: fixed;
-        display: none;
-        right: 20px;
-        bottom: 30px;
-        color: $activeColor;
-        opacity: 0.85;
-    }
+.arrowUp {
+    position: fixed;
+    display: none;
+    right: 20px;
+    bottom: 30px;
+    color: $activeColor;
+    opacity: 0.85;
+}
+//footer
 footer {
     padding: 15px;
-    
     text-align: center;
     p {
         margin: 0;
+        font-weight: 400;
     }
 }
+//media queries
 @media (max-width:1150px) {
     nav .menu {
         width:55%;
+    }
+    nav.wrapper {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+    nav.scrolled {
+        padding-top: 9px;
+        padding-bottom: 12px;
     }
     .socialMedia {
         width: 55%;
@@ -277,7 +293,6 @@ footer {
         margin-top: auto;
         margin-right: 0;
     }
-
 }
 @media (max-width:900px) {
     .project {
@@ -290,8 +305,9 @@ footer {
             margin-bottom: 30px;
         }
     }
-    .priceGame .projectInfo  {
-    order:2;
+    .priceGame .projectImg,
+    .collegeNav .projectImg  {
+    order:-2;
     }
 }
 @media (max-width:750px) {
@@ -313,7 +329,6 @@ footer {
     .aboutPic .headShot {
         width: 100%;
     }
-    
     .socialMedia {
         width: 60%
     }
@@ -328,7 +343,6 @@ footer {
         img, 
         svg {
             width:46px;
-        
         }
     }
     .contactWrapper {
@@ -352,7 +366,6 @@ footer {
         img, 
         svg {
             width:36px;
-        
         }
     }
     .project .projectInfo {
@@ -360,8 +373,18 @@ footer {
         padding-right: 15px;
     }
 }
+@media (max-width:500px) {
+    nav.wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    }
+    nav.scrolled {
+    padding-top: 7px;
+    padding-bottom: 10px;
+    }
+}
 @media (max-width:400px) {
-    .project a {
+    .project .codeLink {
         display: inline-block;
         margin-bottom: 20px;
     }
