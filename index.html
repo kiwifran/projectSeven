@@ -18,16 +18,13 @@
     <a class="visuallyHidden" href="#about">Skip to the about section</a>
     <!-- header -->
     <header>
-        <div 
-        class=" headerWrapper parallax-window" 
-        data-parallax="scroll" 
-        data-image-src="./assets/headerBackground.jpg"
-        data-position="left center">
+        <div class="headerWrapper fixedBg">
             <h1> <span class="helloWorld">Ciao Mondo!</span> <br> <span class="myName">I'm Frankie Wang</span></h1>
+            
         </div>
-        <button aria-label="go to the menu" class="arrowDown">
-            <i aira-hidden="true" class="fas fa-angle-double-down"></i>        
-        </button>
+            <button aria-label="go to the menu" class="arrowDown">
+                <i aira-hidden="true" class="fas fa-angle-double-down"></i>
+            </button>
     </header>
     <!-- main -->
     <main>
@@ -132,12 +129,7 @@
                 </ul>
             </div>
         </div>
-        <div 
-        class="parallax-window" 
-        data-parallax="scroll" 
-        data-image-src="./assets/pegasus.jpg"
-        data-bleed="10"
-        ></div>
+        <div class="fixedBgOne fixedBg"></div>
         <div class="worksWrapper wrapper" id="works">
             <h2>Works</h2>
             <div class="projects">
@@ -214,11 +206,7 @@
                 </div>
             </div>
         </div>
-        <div   
-        class="parallax-window" 
-        data-parallax="scroll" 
-        data-image-src="./assets/street.jpg"
-        data-bleed="10"></div>
+        <div class="fixedBgTwo fixedBg"></div>
         <div class="contactWrapper" id="contact">
             <div class="wrapper">
                 <h2>Let's Chat</h3>
@@ -247,7 +235,6 @@
         <p>&copy;Frankie Wang 2019</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./scripts/parallax.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts/main.js"></script>
 </body>

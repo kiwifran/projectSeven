@@ -13,17 +13,17 @@ span.letters {
     animation: fadeIn .5s 0s forwards;
     opacity: 0; 
 }
-//for parallax.js
-.parallax-window {
-    min-height: 420px;
-    background: transparent;
-}
-.parallax-mirror:nth-of-type(3) {
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-}
 //header
 header {
+    .headerWrapper {
+        padding-top: 10%;
+        height: calc(100vh - 60px);
+        text-align: center;
+        background-image:url(../assets/headerBackground.jpg);
+        background-position: 22% center;
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+    }
     .parallax-window {
         padding-top: 10%;
         height: calc(100vh - 60px);
@@ -162,13 +162,23 @@ nav {
         fill:black;
     }
 }
+.fixedBgOne,
+.fixedBgTwo {
+    height:400px;
+
+}
+.fixedBgOne {
+        background:url(../assets/pegasus.jpg);
+}
+.fixedBgTwo {
+    background: url(../assets/street.jpg);
+}
 .worksWrapper {
     overflow: hidden;
 }
 .project {
     @include flex(row, center, center, left);
     margin-top: 50px;
-    // overflow: hidden;
     &:first-of-type  {
         margin-top: 30px;
     }
@@ -334,6 +344,10 @@ footer {
     .socialMedia {
         width: 60%
     }
+    .fixedBgOne,
+    .fixedBgTwo {
+        height: 300px;
+    }
     .icons {
         .skillIcon {
                 width: 33%;
@@ -383,10 +397,14 @@ footer {
     padding-top: 7px;
     padding-bottom: 10px;
     }
+    .fixedBgOne,
+    .fixedBgTwo {
+        height: 200px;
+    }
 }
 @media (max-width:400px) {
-    header .parallax-window {
-        padding-top: 17%;
+    header .headerWrapper{
+        padding-top: 21%;
     }
     .project .codeLink {
         display: inline-block;

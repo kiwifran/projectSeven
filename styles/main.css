@@ -274,6 +274,11 @@ textarea {
   margin-right: auto;
   padding: 0 8%; }
 
+div.fixedBg {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+
 @media (max-width: 1000px) {
   button {
     font-size: 30px; } }
@@ -391,11 +396,12 @@ span.letters {
     -webkit-animation-delay: 1.1s;
     animation-delay: 1.1s; }
 
-.parallax-window {
-  min-height: 420px;
-  background: transparent; }
-
-.parallax-mirror:nth-of-type(3) {
+header .headerWrapper {
+  padding-top: 10%;
+  height: calc(100vh - 60px);
+  text-align: center;
+  background-image: url(../assets/headerBackground.jpg);
+  background-position: 22% center;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%); }
 
@@ -609,6 +615,16 @@ nav {
   .icons svg path {
     fill: black; }
 
+.fixedBgOne,
+.fixedBgTwo {
+  height: 400px; }
+
+.fixedBgOne {
+  background: url(../assets/pegasus.jpg); }
+
+.fixedBgTwo {
+  background: url(../assets/street.jpg); }
+
 .worksWrapper {
   overflow: hidden; }
 
@@ -766,6 +782,9 @@ footer {
     width: 100%; }
   .socialMedia {
     width: 60%; }
+  .fixedBgOne,
+  .fixedBgTwo {
+    height: 300px; }
   .icons .skillIcon {
     width: 33%;
     margin-top: 20px; }
@@ -797,11 +816,14 @@ footer {
     padding: 12px 4%; }
   nav.scrolled {
     padding-top: 7px;
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+  .fixedBgOne,
+  .fixedBgTwo {
+    height: 200px; } }
 
 @media (max-width: 400px) {
-  header .parallax-window {
-    padding-top: 17%; }
+  header .headerWrapper {
+    padding-top: 21%; }
   .project .codeLink {
     display: inline-block;
     margin-bottom: 20px; } }

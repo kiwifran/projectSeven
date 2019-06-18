@@ -61,9 +61,6 @@ const scrollLinks = () => {
 	});
 };
 $(function() {
-	$(window)
-		.trigger("resize")
-		.trigger("scroll");
 	AOS.init();
 	letterByLetter();
 	scrollDown();

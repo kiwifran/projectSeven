@@ -63,6 +63,11 @@ textarea {
     margin-right: auto;
     padding: 0 8%;
 }
+div.fixedBg {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
 //media queries
 @media (max-width:1000px) {
     button {
