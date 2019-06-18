@@ -411,10 +411,6 @@ header .arrowDown {
 main {
   margin-top: 15px; }
 
-nav.wrapper {
-  padding-top: 20px;
-  padding-bottom: 20px; }
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -433,7 +429,8 @@ nav {
   top: 0;
   position: -webkit-sticky;
   position: sticky;
-  z-index: 5; }
+  z-index: 5;
+  padding: 20px 8%; }
   nav.scrolled {
     background-color: #eeeeee !important;
     opacity: 0.85;
@@ -714,7 +711,7 @@ footer {
 @media (max-width: 1150px) {
   nav .menu {
     width: 55%; }
-  nav.wrapper {
+  nav {
     padding-top: 17px;
     padding-bottom: 17px; }
   nav.scrolled {
@@ -792,9 +789,8 @@ footer {
     padding-right: 15px; } }
 
 @media (max-width: 500px) {
-  nav.wrapper {
-    padding-top: 12px;
-    padding-bottom: 12px; }
+  nav {
+    padding: 12px 4%; }
   nav.scrolled {
     padding-top: 7px;
     padding-bottom: 10px; } }

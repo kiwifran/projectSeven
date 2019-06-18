@@ -38,15 +38,12 @@ header {
 main {
     margin-top: 15px;
 }
-nav.wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 nav {
     @include flex (row, flex-end, center, center);
     top:0;
     position: sticky;
     z-index: 5;
+    padding: 20px 8%;
     &.scrolled {
         background-color: $primaryColor !important;
         opacity: 0.85;
@@ -272,7 +269,7 @@ footer {
     nav .menu {
         width:55%;
     }
-    nav.wrapper {
+    nav {
         padding-top: 17px;
         padding-bottom: 17px;
     }
@@ -374,9 +371,8 @@ footer {
     }
 }
 @media (max-width:500px) {
-    nav.wrapper {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    nav {
+    padding:12px 4%;
     }
     nav.scrolled {
     padding-top: 7px;
