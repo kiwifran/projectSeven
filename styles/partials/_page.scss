@@ -3,17 +3,17 @@ $heading: "Ciao Mondo!";
 @mixin animate-letters($string) { 
 $length: str-length($string);
     @for $i from 1 through $length {
-    &:nth-of-type(#{$i}) { 
-      animation-delay: $i * .1s;
-    }
+        &:nth-of-type(#{$i}) { 
+        animation-delay: $i * .1s;
+        }
     }
 }
 span.letters { 
     @include animate-letters($heading); 
-
     animation: fadeIn .5s 0s forwards;
     opacity: 0; 
 }
+//for parallax.js
 .parallax-window {
     min-height: 420px;
     background: transparent;
@@ -21,22 +21,20 @@ span.letters {
 .parallax-mirror:nth-of-type(3) {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-
 }
+//header
 header {
     .parallax-window {
         padding-top: 10%;
         height: calc(100vh - 60px);
-        // background:  center center/cover url("../assets/headerBackground.jpg");
-
         text-align: center;
     }
     .arrowDown {
         margin:9px auto 0;
-        height: 30px;
         color: $secondaryColor;
     }
 }
+//main part
 main {
     margin-top: 15px;
 }
@@ -60,16 +58,12 @@ nav {
     .menu {
         @include flex(row,space-between, center, center);
         width: 40%;
-        // margin-top: 0;
         margin:0;
-        // padding-top: 20px;
     }
     .menuItem {
-        // width: 25%;
         a {
             position: relative;
             padding-bottom: 5px;
-            color:inherit;
             &:hover {
                 color:$accentColor;
             }
@@ -96,7 +90,6 @@ nav {
             }
         }
     }
-
 }
 .aboutWrapper,
 .skillsWrapper,
@@ -109,7 +102,7 @@ nav {
     @include flex (row, space-between, center, center);
     .aboutText,
     .aboutPic {
-        width: 50%;
+        width: 49%;
     }
     .aboutText {
         text-align: left;
@@ -124,28 +117,20 @@ nav {
     @include flex(row, flex-end, flex-start, center);
     .dandelion,
     .headShot {
-    width: 45%;
+        width: 45%;
     }
-    
-    // .dandelion {
-    //     position: absolute;
-    //     top: 0;
-    //     right: 5%;
-    // }
     .headShot {
         margin-top: 25%;
         margin-right: -14%;
         z-index:1;
     }
 }
-
 .socialMedia {
     @include flex(row, space-between, center, left);
     width: 39%;
     a{
         width: 30%;
         font-size: 35px;
-        color:inherit;
         &:hover,
         &:focus {
             -webkit-animation: jello-vertical 0.9s both;
@@ -181,7 +166,7 @@ nav {
     }
 }
 .project {
-    @include flex(row, space-between, center, left);
+    @include flex(row, center, center, left);
     margin-top: 50px;
     &:first-of-type  {
         margin-top: 30px;
@@ -191,7 +176,6 @@ nav {
         width: 50%;
     }
     .projectInfo {
-        // border: 5px solid $secondaryColor;
         border-radius: 2px;
         padding: 45px;
         background:$primaryColor;
@@ -202,9 +186,6 @@ nav {
     }
     p{
         margin-bottom: 35px;
-    }
-    a {
-        color:inherit;
     }
     .buddies:hover{
         border-bottom: 1px solid $secondaryColor;
@@ -233,7 +214,6 @@ nav {
     //pricetag icon by iconfield from the Noun Project
     cursor: url(../assets/priceCursor.png) 5 5, default;
 }
-
 .melody,
 .melody a {
     //Music icon by Naomi Atkinson from the Noun Project
@@ -245,7 +225,6 @@ nav {
     //Book icon by sitti fara from the Noun Project
     cursor:url(../assets/collegeNavCursor.png) 5 5, default;
 }
-
 .contactWrapper {
     @include color(white, $secondaryColor);
     h2 {
@@ -271,22 +250,24 @@ nav {
         resize: vertical;
     }
 }
-    .arrowUp {
-        position: fixed;
-        display: none;
-        right: 20px;
-        bottom: 30px;
-        color: $activeColor;
-        opacity: 0.85;
-    }
+.arrowUp {
+    position: fixed;
+    display: none;
+    right: 20px;
+    bottom: 30px;
+    color: $activeColor;
+    opacity: 0.85;
+}
+//footer
 footer {
     padding: 15px;
-    
     text-align: center;
     p {
         margin: 0;
+        font-weight: 400;
     }
 }
+//media queries
 @media (max-width:1150px) {
     nav .menu {
         width:55%;
@@ -312,7 +293,6 @@ footer {
         margin-top: auto;
         margin-right: 0;
     }
-
 }
 @media (max-width:900px) {
     .project {
@@ -349,7 +329,6 @@ footer {
     .aboutPic .headShot {
         width: 100%;
     }
-    
     .socialMedia {
         width: 60%
     }
@@ -364,7 +343,6 @@ footer {
         img, 
         svg {
             width:46px;
-        
         }
     }
     .contactWrapper {
@@ -388,7 +366,6 @@ footer {
         img, 
         svg {
             width:36px;
-        
         }
     }
     .project .projectInfo {
@@ -407,7 +384,7 @@ footer {
     }
 }
 @media (max-width:400px) {
-    .project a {
+    .project .codeLink {
         display: inline-block;
         margin-bottom: 20px;
     }

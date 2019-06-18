@@ -3,21 +3,17 @@
     font-size: $size * 1px;
     font-family: 'Playfair Display', serif;
 }
-
 @mixin bodyFont ($size) {
     font-size: ($size/20) * 1rem;
     font-size: $size * 1px;
     font-family: 'Lato', sans-serif;
-
 }
-
 body {
     @include bodyFont(20);
     font-weight: 300;
 }
 h1 {
     @include bodyFont(88);
-    // font-weight: 300;
     span.helloWorld {
         @include displayFont(59);
         font-style: italic;
@@ -49,7 +45,7 @@ textarea {
 .project .codeLink {
     font-weight: 700;
 }
-
+//media queries
 @media (max-width:1480px) {
     h1 {
         font-size:65px;
@@ -79,7 +75,7 @@ textarea {
         font-size: 25px    
     }
     .project .usedTools {
-    font-size: 18px
+        font-size: 18px
     }
     label,
     input,
@@ -95,10 +91,8 @@ textarea {
             font-size: 25px;
         }
     }
-    .menu {
-        font-size: 18px;
-    }
-    .project  p {
+    .menu,
+    .project p {
         font-size: 18px;
     }
 }
