@@ -609,6 +609,9 @@ nav {
   .icons svg path {
     fill: black; }
 
+.worksWrapper {
+  overflow: hidden; }
+
 .project {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -691,7 +694,8 @@ nav {
     .contactWrapper textarea:focus {
       background-color: black; }
   .contactWrapper textarea {
-    resize: vertical; }
+    resize: vertical;
+    margin-bottom: 35px; }
 
 .arrowUp {
   position: fixed;
@@ -796,6 +800,8 @@ footer {
     padding-bottom: 10px; } }
 
 @media (max-width: 400px) {
+  header .parallax-window {
+    padding-top: 17%; }
   .project .codeLink {
     display: inline-block;
     margin-bottom: 20px; } }
