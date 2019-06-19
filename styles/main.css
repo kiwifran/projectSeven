@@ -414,7 +414,15 @@ header .parallax-window {
 
 header .arrowDown {
   margin: 9px auto 0;
-  color: #222222; }
+  color: #222222;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+  header .arrowDown:hover {
+    -webkit-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    color: #649fc9; }
 
 main {
   margin-top: 15px; }
@@ -469,7 +477,7 @@ nav {
   nav .menuItem a {
     position: relative;
     padding-bottom: 5px; }
-    nav .menuItem a:hover {
+    nav .menuItem a:hover, nav .menuItem a:focus {
       color: #314850; }
     nav .menuItem a::before {
       content: "";
@@ -487,7 +495,7 @@ nav {
       -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
       transform: scaleX(0); }
-    nav .menuItem a:hover::before {
+    nav .menuItem a:hover::before, nav .menuItem a:focus::before {
       visibility: visible;
       -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
@@ -660,8 +668,12 @@ nav {
     font-weight: 400; }
   .project p {
     margin-bottom: 35px; }
-  .project .buddies:hover {
-    border-bottom: 1px solid #222222; }
+  .project .buddies {
+    -webkit-transform: all 0.4s;
+    -ms-transform: all 0.4s;
+    transform: all 0.4s; }
+    .project .buddies:hover, .project .buddies:focus {
+      border-bottom: 1px solid #222222; }
   .project .codeLink {
     margin-right: 40px;
     padding: 5px 8px;
@@ -714,6 +726,8 @@ nav {
   .contactWrapper textarea {
     resize: vertical;
     margin-bottom: 35px; }
+  .contactWrapper [type="submit"]:hover {
+    background-color: black; }
 
 .arrowUp {
   position: fixed;
@@ -721,7 +735,14 @@ nav {
   right: 20px;
   bottom: 30px;
   color: #649fc9;
-  opacity: 0.85; }
+  opacity: 0.85;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+  .arrowUp:hover {
+    -webkit-transform: scaleY(1.35) scaleX(1.15);
+    -ms-transform: scaleY(1.35) scaleX(1.15);
+    transform: scaleY(1.35) scaleX(1.15); }
 
 footer {
   padding: 15px;

@@ -33,7 +33,13 @@ header {
     .arrowDown {
         margin:9px auto 0;
         color: $secondaryColor;
+        transition: all 0.5s;
+        &:hover {
+            transform: scale(1.25);
+            color:$activeColor;
+        }
     }
+    
 }
 //main part
 main {
@@ -62,7 +68,8 @@ nav {
         a {
             position: relative;
             padding-bottom: 5px;
-            &:hover {
+            &:hover,
+            &:focus {
                 color:$accentColor;
             }
             //underline effect adapted from https://codepen.io/adatg/pen/OaWvap
@@ -81,7 +88,8 @@ nav {
                 -webkit-transform: scaleX(0);
                 transform: scaleX(0);
             }
-            &:hover::before {
+            &:hover::before,
+            &:focus::before {
                 visibility: visible;
                 -webkit-transform: scaleX(1);
                 transform: scaleX(1);
@@ -198,8 +206,12 @@ nav {
     p{
         margin-bottom: 35px;
     }
-    .buddies:hover{
+    .buddies {
+        transform: all 0.4s;
+        &:hover,
+        &:focus {
         border-bottom: 1px solid $secondaryColor;
+        }
     }
     .codeLink {
         margin-right: 40px;
@@ -261,6 +273,9 @@ nav {
         resize: vertical;
         margin-bottom: 35px;
     }
+    [type="submit"]:hover {
+        background-color: black;
+    }
 }
 .arrowUp {
     position: fixed;
@@ -269,6 +284,10 @@ nav {
     bottom: 30px;
     color: $activeColor;
     opacity: 0.85;
+    transition: all 0.5s;
+    &:hover {
+        transform: scaleY(1.35) scaleX(1.15);
+    }
 }
 //footer
 footer {
