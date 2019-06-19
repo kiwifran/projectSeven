@@ -393,6 +393,9 @@ footer {
     }
 }
 @media (max-width:500px) {
+    header .headerWrapper {
+        background-image:url(../assets/headerBackgroundSmaller.jpg);
+    }
     nav {
     padding:12px 4%;
     }

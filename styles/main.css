@@ -816,6 +816,8 @@ footer {
     padding-right: 15px; } }
 
 @media (max-width: 500px) {
+  header .headerWrapper {
+    background-image: url(../assets/headerBackgroundSmaller.jpg); }
   nav {
     padding: 12px 4%; }
   nav.scrolled {
