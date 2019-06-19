@@ -289,7 +289,9 @@ div.fixedBg {
 
 @media (max-width: 500px) {
   .wrapper {
-    padding: 0 4%; } }
+    padding: 0 4%; }
+  div.fixedBg {
+    background-attachment: scroll; } }
 
 @-webkit-keyframes fadeIn {
   from {
@@ -620,10 +622,10 @@ nav {
   height: 400px; }
 
 .fixedBgOne {
-  background: url(../assets/pegasus.jpg); }
+  background-image: url(../assets/pegasus.jpg); }
 
 .fixedBgTwo {
-  background: url(../assets/street.jpg); }
+  background-image: url(../assets/street.jpg); }
 
 .worksWrapper {
   overflow: hidden; }
@@ -799,6 +801,8 @@ footer {
     width: 100%; } }
 
 @media (max-width: 550px) {
+  header .headerWrapper {
+    padding-top: 18.5%; }
   .icons .skillIcon {
     width: 50%;
     margin-top: 10px; }
@@ -823,7 +827,7 @@ footer {
 
 @media (max-width: 400px) {
   header .headerWrapper {
-    padding-top: 21%; }
+    padding-top: 24%; }
   .project .codeLink {
     display: inline-block;
     margin-bottom: 20px; } }
