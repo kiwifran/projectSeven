@@ -703,6 +703,10 @@ nav {
 .collegeNav a {
   cursor: url(../assets/collegeNavCursor.png) 5 5, default; }
 
+.events,
+.events a {
+  cursor: url(../assets/glassCursor.png) 5 5, default; }
+
 .contactWrapper {
   color: white;
   background-color: #222222; }

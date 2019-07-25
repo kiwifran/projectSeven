@@ -248,6 +248,11 @@ nav {
     //Book icon by sitti fara from the Noun Project
     cursor:url(../assets/collegeNavCursor.png) 5 5, default;
 }
+.events,
+.events a {
+    //Wine by Adrien Coquet from the Noun Project
+    cursor:url(../assets/glassCursor.png) 5 5, default;
+}
 .contactWrapper {
     @include color(white, $secondaryColor);
     h2 {
