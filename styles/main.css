@@ -361,8 +361,8 @@ div.fixedBg {
     transform: scale3d(1, 1, 1); } }
 
 span.letters {
-  -webkit-animation: fadeIn .5s 0s forwards;
-  animation: fadeIn .5s 0s forwards;
+  -webkit-animation: fadeIn 0.5s 0s forwards;
+  animation: fadeIn 0.5s 0s forwards;
   opacity: 0; }
   span.letters:nth-of-type(1) {
     -webkit-animation-delay: 0.1s;

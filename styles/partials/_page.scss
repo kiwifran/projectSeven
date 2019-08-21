@@ -1,443 +1,438 @@
 // heading animation adapted from https://codepen.io/keenanpayne/pen/KmGXVx
 $heading: "Ciao Mondo!";
-@mixin animate-letters($string) { 
-$length: str-length($string);
-    @for $i from 1 through $length {
-        &:nth-of-type(#{$i}) { 
-        animation-delay: $i * .1s;
-        }
-    }
+@mixin animate-letters($string) {
+	$length: str-length($string);
+	@for $i from 1 through $length {
+		&:nth-of-type(#{$i}) {
+			animation-delay: $i * 0.1s;
+		}
+	}
 }
-span.letters { 
-    @include animate-letters($heading); 
-    animation: fadeIn .5s 0s forwards;
-    opacity: 0; 
+span.letters {
+	@include animate-letters($heading);
+	animation: fadeIn 0.5s 0s forwards;
+	opacity: 0;
 }
 
 //header
 header {
-    .headerWrapper {
-        padding-top: 10%;
-        height: calc(100vh - 60px);
-        text-align: center;
-        background-image:url(../assets/headerBackground.jpg);
-        background-position: 22% center;
-        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-        clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-    }
-    .parallax-window {
-        padding-top: 10%;
-        height: calc(100vh - 60px);
-        text-align: center;
-    }
-    .arrowDown {
-        margin:9px auto 0;
-        color: $secondaryColor;
-        transition: all 0.5s;
-        &:hover {
-            transform: scale(1.25);
-            color:$activeColor;
-        }
-    }
-    
+	.headerWrapper {
+		padding-top: 10%;
+		height: calc(100vh - 60px);
+		text-align: center;
+		background-image: url(../assets/headerBackground.jpg);
+		background-position: 22% center;
+		-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+		clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+	}
+	.parallax-window {
+		padding-top: 10%;
+		height: calc(100vh - 60px);
+		text-align: center;
+	}
+	.arrowDown {
+		margin: 9px auto 0;
+		color: $secondaryColor;
+		transition: all 0.5s;
+		&:hover {
+			transform: scale(1.25);
+			color: $activeColor;
+		}
+	}
 }
 //main part
 main {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 nav {
-    @include flex (row, flex-end, center, center);
-    top:0;
-    position: sticky;
-    z-index: 5;
-    padding: 20px 8%;
-    &.scrolled {
-        background-color: $primaryColor !important;
-        opacity: 0.85;
-        padding-top: 11px;
-        padding-bottom: 14px;
-        box-shadow:0 0.1px 2px 0.2px $secondaryColor;
-        transition: all 0.5s;
-    }
-    .menu {
-        @include flex(row,space-between, center, center);
-        width: 40%;
-        margin:0;
-    }
-    .menuItem {
-        a {
-            position: relative;
-            padding-bottom: 5px;
-            &:hover,
-            &:focus {
-                color:$accentColor;
-            }
-            //underline effect adapted from https://codepen.io/adatg/pen/OaWvap
-            &::before {
-                content:"";
-                background: $accentColor;
-                visibility: hidden;
-                width: 100%;
-                height: 3px;
-                border-radius: 1px;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                -webkit-transition: all 0.4s ease-in-out;
-                transition: all 0.4s ease-in-out;
-                -webkit-transform: scaleX(0);
-                transform: scaleX(0);
-            }
-            &:hover::before,
-            &:focus::before {
-                visibility: visible;
-                -webkit-transform: scaleX(1);
-                transform: scaleX(1);
-            }
-        }
-    }
+	@include flex(row, flex-end, center, center);
+	top: 0;
+	position: sticky;
+	z-index: 5;
+	padding: 20px 8%;
+	&.scrolled {
+		background-color: $primaryColor !important;
+		opacity: 0.85;
+		padding-top: 11px;
+		padding-bottom: 14px;
+		box-shadow: 0 0.1px 2px 0.2px $secondaryColor;
+		transition: all 0.5s;
+	}
+	.menu {
+		@include flex(row, space-between, center, center);
+		width: 40%;
+		margin: 0;
+	}
+	.menuItem {
+		a {
+			position: relative;
+			padding-bottom: 5px;
+			&:hover,
+			&:focus {
+				color: $accentColor;
+			}
+			//underline effect adapted from https://codepen.io/adatg/pen/OaWvap
+			&::before {
+				content: "";
+				background: $accentColor;
+				visibility: hidden;
+				width: 100%;
+				height: 3px;
+				border-radius: 1px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				-webkit-transition: all 0.4s ease-in-out;
+				transition: all 0.4s ease-in-out;
+				-webkit-transform: scaleX(0);
+				transform: scaleX(0);
+			}
+			&:hover::before,
+			&:focus::before {
+				visibility: visible;
+				-webkit-transform: scaleX(1);
+				transform: scaleX(1);
+			}
+		}
+	}
 }
 .aboutWrapper,
 .skillsWrapper,
 .worksWrapper,
 .contactWrapper {
-    padding-top: 60px;
-    padding-bottom: 68px;
+	padding-top: 60px;
+	padding-bottom: 68px;
 }
 .aboutWrapper {
-    @include flex (row, space-between, center, center);
-    .aboutText,
-    .aboutPic {
-        width: 49%;
-    }
-    .aboutText {
-        text-align: left;
-        h2 {
-            width: 60%;
-        }
-    }
+	@include flex(row, space-between, center, center);
+	.aboutText,
+	.aboutPic {
+		width: 49%;
+	}
+	.aboutText {
+		text-align: left;
+		h2 {
+			width: 60%;
+		}
+	}
 }
 
 .aboutPic {
-    position: relative;
-    @include flex(row, flex-end, flex-start, center);
-    .dandelion,
-    .headShot {
-        width: 45%;
-    }
-    .headShot {
-        margin-top: 25%;
-        margin-right: -14%;
-        z-index:1;
-    }
+	position: relative;
+	@include flex(row, flex-end, flex-start, center);
+	.dandelion,
+	.headShot {
+		width: 45%;
+	}
+	.headShot {
+		margin-top: 25%;
+		margin-right: -14%;
+		z-index: 1;
+	}
 }
 .socialMedia {
-    @include flex(row, space-between, center, left);
-    width: 39%;
-    a{
-        width: 30%;
-        font-size: 35px;
-        &:hover,
-        &:focus {
-            -webkit-animation: jello-vertical 0.9s both;
-	        animation: jello-vertical 0.9s both;
-        }
-    }
-
+	@include flex(row, space-between, center, left);
+	width: 39%;
+	a {
+		width: 30%;
+		font-size: 35px;
+		&:hover,
+		&:focus {
+			-webkit-animation: jello-vertical 0.9s both;
+			animation: jello-vertical 0.9s both;
+		}
+	}
 }
 .skillsWrapper {
-    padding-bottom: 20px;
-    background: $primaryColor;
-    p {
-        font-weight: 400;
-    }
+	padding-bottom: 20px;
+	background: $primaryColor;
+	p {
+		font-weight: 400;
+	}
 }
 .icons {
-    @include flex(row, center, baseline, center);
-    flex-wrap: wrap;
-    .skillIcon {
-        @include flex(column, center, center, center);
-        width: 20%;
-        i {
-            font-size: 60px;
-        }
-    }
-    img, 
-    svg {
-        width:55px;
-    
-    }
-    svg path {
-        fill:black;
-    }
+	@include flex(row, center, baseline, center);
+	flex-wrap: wrap;
+	.skillIcon {
+		@include flex(column, center, center, center);
+		width: 20%;
+		i {
+			font-size: 60px;
+		}
+	}
+	img,
+	svg {
+		width: 55px;
+	}
+	svg path {
+		fill: black;
+	}
 }
 .fixedBgOne,
 .fixedBgTwo {
-    height:400px;
+	height: 400px;
 }
 .fixedBgOne {
-    background-image:url(../assets/pegasus.jpg);
+	background-image: url(../assets/pegasus.jpg);
 }
 .fixedBgTwo {
-    background-image: url(../assets/street.jpg);
+	background-image: url(../assets/street.jpg);
 }
 .worksWrapper {
-    overflow: hidden;
+	overflow: hidden;
 }
 .project {
-    @include flex(row, center, center, left);
-    margin-top: 50px;
-    &:first-of-type  {
-        margin-top: 30px;
-    }
-    .projectImg,
-    .projectInfo {
-        width: 50%;
-    }
-    .projectInfo {
-        border-radius: 2px;
-        padding: 45px;
-        background:$primaryColor;
-    }
-    .usedTools {
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-    p{
-        margin-bottom: 35px;
-    }
-    .buddies {
-        transform: all 0.4s;
-        &:hover,
-        &:focus {
-        border-bottom: 1px solid $secondaryColor;
-        }
-    }
-    .codeLink {
-        margin-right: 40px;
-        padding: 5px 8px;
-        border: 2px solid $accentColor;
-        border-radius: 2px;
-        transition: all linear 0.4s;
-        //hover effects from https://codepen.io/neerav-deewan/pen/BPXWeL
-        &:focus,
-        &:hover {
-            box-shadow: inset 0 -60px 0 0 $accentColor;
-            color: white;
-        }
-    }
+	@include flex(row, center, center, left);
+	margin-top: 50px;
+	&:first-of-type {
+		margin-top: 30px;
+	}
+	.projectImg,
+	.projectInfo {
+		width: 50%;
+	}
+	.projectInfo {
+		border-radius: 2px;
+		padding: 45px;
+		background: $primaryColor;
+	}
+	.usedTools {
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+	p {
+		margin-bottom: 35px;
+	}
+	.buddies {
+		transform: all 0.4s;
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid $secondaryColor;
+		}
+	}
+	.codeLink {
+		margin-right: 40px;
+		padding: 5px 8px;
+		border: 2px solid $accentColor;
+		border-radius: 2px;
+		transition: all linear 0.4s;
+		//hover effects from https://codepen.io/neerav-deewan/pen/BPXWeL
+		&:focus,
+		&:hover {
+			box-shadow: inset 0 -60px 0 0 $accentColor;
+			color: white;
+		}
+	}
 }
 .recipe,
 .recipe a {
-    //Food icon by Arif Arif from the Noun Project
-    cursor: url(../assets/recipeCursor.png) 9 9, default;
+	//Food icon by Arif Arif from the Noun Project
+	cursor: url(../assets/recipeCursor.png) 9 9, default;
 }
 .priceGame,
 .priceGame a {
-    //pricetag icon by iconfield from the Noun Project
-    cursor: url(../assets/priceCursor.png) 5 5, default;
+	//pricetag icon by iconfield from the Noun Project
+	cursor: url(../assets/priceCursor.png) 5 5, default;
 }
 .melody,
 .melody a {
-    //Music icon by Naomi Atkinson from the Noun Project
-    cursor: url(../assets/melodyCursor.png) 5 14, default;
-
+	//Music icon by Naomi Atkinson from the Noun Project
+	cursor: url(../assets/melodyCursor.png) 5 14, default;
 }
 .collegeNav,
 .collegeNav a {
-    //Book icon by sitti fara from the Noun Project
-    cursor:url(../assets/collegeNavCursor.png) 5 5, default;
+	//Book icon by sitti fara from the Noun Project
+	cursor: url(../assets/collegeNavCursor.png) 5 5, default;
 }
 .events,
 .events a {
-    //Wine by Adrien Coquet from the Noun Project
-    cursor:url(../assets/glassCursor.png) 5 5, default;
+	//Wine by Adrien Coquet from the Noun Project
+	cursor: url(../assets/glassCursor.png) 5 5, default;
 }
 .contactWrapper {
-    @include color(white, $secondaryColor);
-    h2 {
-        border-bottom: 1px solid $primaryColor;
-    }
-    label,
-    input,
-    textarea {
-        display: block;
-        width: 70%;
-        margin: 10px auto;
-    }
-    input,
-    textarea {
-        padding: 10px;
-        border-bottom: 1px solid $primaryColor;
-        @include color(white, inherit);
-        &:focus {
-            background-color: black;
-        }
-    }
-    textarea {
-        resize: vertical;
-        margin-bottom: 35px;
-    }
-    [type="submit"]:hover {
-        background-color: black;
-    }
+	@include color(white, $secondaryColor);
+	h2 {
+		border-bottom: 1px solid $primaryColor;
+	}
+	label,
+	input,
+	textarea {
+		display: block;
+		width: 70%;
+		margin: 10px auto;
+	}
+	input,
+	textarea {
+		padding: 10px;
+		border-bottom: 1px solid $primaryColor;
+		@include color(white, inherit);
+		&:focus {
+			background-color: black;
+		}
+	}
+	textarea {
+		resize: vertical;
+		margin-bottom: 35px;
+	}
+	[type="submit"]:hover {
+		background-color: black;
+	}
 }
 .arrowUp {
-    position: fixed;
-    display: none;
-    right: 20px;
-    bottom: 30px;
-    color: $activeColor;
-    opacity: 0.85;
-    transition: all 0.5s;
-    &:hover {
-        transform: scaleY(1.35) scaleX(1.15);
-    }
+	position: fixed;
+	display: none;
+	right: 20px;
+	bottom: 30px;
+	color: $activeColor;
+	opacity: 0.85;
+	transition: all 0.5s;
+	&:hover {
+		transform: scaleY(1.35) scaleX(1.15);
+	}
 }
 //footer
 footer {
-    padding: 15px;
-    text-align: center;
-    p {
-        margin: 0;
-        font-weight: 400;
-    }
+	padding: 15px;
+	text-align: center;
+	p {
+		margin: 0;
+		font-weight: 400;
+	}
 }
 //media queries
-@media (max-width:1150px) {
-    nav .menu {
-        width:55%;
-    }
-    nav {
-        padding-top: 17px;
-        padding-bottom: 17px;
-    }
-    nav.scrolled {
-        padding-top: 9px;
-        padding-bottom: 12px;
-    }
-    .socialMedia {
-        width: 55%;
-    }
+@media (max-width: 1150px) {
+	nav .menu {
+		width: 55%;
+	}
+	nav {
+		padding-top: 17px;
+		padding-bottom: 17px;
+	}
+	nav.scrolled {
+		padding-top: 9px;
+		padding-bottom: 12px;
+	}
+	.socialMedia {
+		width: 55%;
+	}
 }
-@media (max-width:1000px) {
-    .dandelion {
-        display: none;
-    }
-    .aboutPic .headShot {
-        width: 90%;
-        margin-top: auto;
-        margin-right: 0;
-    }
+@media (max-width: 1000px) {
+	.dandelion {
+		display: none;
+	}
+	.aboutPic .headShot {
+		width: 90%;
+		margin-top: auto;
+		margin-right: 0;
+	}
 }
-@media (max-width:900px) {
-    .project {
-        flex-wrap: wrap;
-        .projectImg,
-        .projectInfo {
-            width: 100%;
-        }
-        .projectImg {
-            margin-bottom: 30px;
-        }
-    }
-    .priceGame .projectImg,
-    .collegeNav .projectImg  {
-    order:-2;
-    }
+@media (max-width: 900px) {
+	.project {
+		flex-wrap: wrap;
+		.projectImg,
+		.projectInfo {
+			width: 100%;
+		}
+		.projectImg {
+			margin-bottom: 30px;
+		}
+	}
+	.priceGame .projectImg,
+	.collegeNav .projectImg {
+		order: -2;
+	}
 }
-@media (max-width:750px) {
-    nav .menu {
-        width:100%;
-    }
-    .aboutWrapper {
-        flex-wrap: wrap;
-        .aboutText{
-            width: 100%;
-        }
-        .aboutPic {
-            width: 70%;
-            margin: 20px auto 35px;
-            border-radius: 2px;
-            order:-2;
-        }
-    }
-    .aboutPic .headShot {
-        width: 100%;
-    }
-    .socialMedia {
-        width: 60%
-    }
-    .fixedBgOne,
-    .fixedBgTwo {
-        height: 300px;
-    }
-    .icons {
-        .skillIcon {
-                width: 33%;
-                margin-top: 20px;
-                i {
-                    font-size: 50px;
-                }
-            }
-        img, 
-        svg {
-            width:46px;
-        }
-    }
-    .contactWrapper {
-        label,
-        input,
-        textarea {
-            width: 100%;
-        }
-    }
-    
+@media (max-width: 750px) {
+	nav .menu {
+		width: 100%;
+	}
+	.aboutWrapper {
+		flex-wrap: wrap;
+		.aboutText {
+			width: 100%;
+		}
+		.aboutPic {
+			width: 70%;
+			margin: 20px auto 35px;
+			border-radius: 2px;
+			order: -2;
+		}
+	}
+	.aboutPic .headShot {
+		width: 100%;
+	}
+	.socialMedia {
+		width: 60%;
+	}
+	.fixedBgOne,
+	.fixedBgTwo {
+		height: 300px;
+	}
+	.icons {
+		.skillIcon {
+			width: 33%;
+			margin-top: 20px;
+			i {
+				font-size: 50px;
+			}
+		}
+		img,
+		svg {
+			width: 46px;
+		}
+	}
+	.contactWrapper {
+		label,
+		input,
+		textarea {
+			width: 100%;
+		}
+	}
 }
-@media (max-width:550px) {
-    header .headerWrapper{
-        padding-top: 18.5%;
-    }
-    .icons {
-        .skillIcon {
-                width:50%;
-                margin-top: 10px;
-                i {
-                    font-size: 40px;
-                }
-            }
-        img, 
-        svg {
-            width:36px;
-        }
-    }
-    .project .projectInfo {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+@media (max-width: 550px) {
+	header .headerWrapper {
+		padding-top: 18.5%;
+	}
+	.icons {
+		.skillIcon {
+			width: 50%;
+			margin-top: 10px;
+			i {
+				font-size: 40px;
+			}
+		}
+		img,
+		svg {
+			width: 36px;
+		}
+	}
+	.project .projectInfo {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
-@media (max-width:500px) {
-    header .headerWrapper {
-        background-image:url(../assets/headerBackgroundSmaller.jpg);
-    }
-    nav {
-    padding:12px 4%;
-    }
-    nav.scrolled {
-    padding-top: 7px;
-    padding-bottom: 10px;
-    }
-    .fixedBgOne,
-    .fixedBgTwo {
-        height: 200px;
-    }
+@media (max-width: 500px) {
+	header .headerWrapper {
+		background-image: url(../assets/headerBackgroundSmaller.jpg);
+	}
+	nav {
+		padding: 12px 4%;
+	}
+	nav.scrolled {
+		padding-top: 7px;
+		padding-bottom: 10px;
+	}
+	.fixedBgOne,
+	.fixedBgTwo {
+		height: 200px;
+	}
 }
-@media (max-width:400px) {
-    header .headerWrapper{
-        padding-top: 24%;
-    }
-    .project .codeLink {
-        display: inline-block;
-        margin-bottom: 20px;
-    }
+@media (max-width: 400px) {
+	header .headerWrapper {
+		padding-top: 24%;
+	}
+	.project .codeLink {
+		display: inline-block;
+		margin-bottom: 20px;
+	}
 }
